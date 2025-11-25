@@ -1,7 +1,9 @@
 # model_inference.py
+"""Transformer-based inference wrapper for threat classification."""
 
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import torch
+
 
 class ThreatModel:
     """

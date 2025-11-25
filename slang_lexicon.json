@@ -1,0 +1,267 @@
+{
+    "version": "1.0.0",
+    "description": "APJ Cybercrime Slang & Idiom Lexicon",
+    "updated": "2025-01-01",
+    "categories": {
+        "stolen_data": {
+            "description": "Terms related to data theft and trading"
+        },
+        "malware_service": {
+            "description": "Terms related to malware and hacking services"
+        },
+        "laundering_service": {
+            "description": "Terms related to money laundering"
+        },
+        "access_broker": {
+            "description": "Terms related to selling system access"
+        },
+        "scam_indicator": {
+            "description": "Terms indicating scam or fraud activity"
+        },
+        "general_underground": {
+            "description": "General underground market terminology"
+        }
+    },
+    "terms": [
+        {
+            "term": "飛數",
+            "pinyin": "fei1 sou3",
+            "language": "zh-yue",
+            "literal": "flying numbers",
+            "meaning": "Illegally obtained financial data or account credentials",
+            "category": "stolen_data",
+            "risk_level": 4,
+            "examples": ["有飛數出售"]
+        },
+        {
+            "term": "黑料",
+            "pinyin": "hei1 liao4",
+            "language": "zh-CN",
+            "literal": "black material",
+            "meaning": "Compromising information, stolen data, or blackmail material",
+            "category": "stolen_data",
+            "risk_level": 4,
+            "examples": ["專收黑料，秒到"]
+        },
+        {
+            "term": "肉雞",
+            "pinyin": "rou4 ji1",
+            "language": "zh-CN",
+            "literal": "meat chicken",
+            "meaning": "Compromised computer or botnet node",
+            "category": "malware_service",
+            "risk_level": 4,
+            "examples": ["大量肉雞出售", "需要肉雞做DDOS"]
+        },
+        {
+            "term": "掛馬",
+            "pinyin": "gua4 ma3",
+            "language": "zh-CN",
+            "literal": "hanging horse",
+            "meaning": "Injecting malware or trojan into a website",
+            "category": "malware_service",
+            "risk_level": 5,
+            "examples": ["專業掛馬服務"]
+        },
+        {
+            "term": "洗白",
+            "pinyin": "xi3 bai2",
+            "language": "zh-CN",
+            "literal": "wash white",
+            "meaning": "Money laundering or cleaning dirty funds",
+            "category": "laundering_service",
+            "risk_level": 5,
+            "examples": ["需要洗白服務"]
+        },
+        {
+            "term": "跑分",
+            "pinyin": "pao3 fen1",
+            "language": "zh-CN",
+            "literal": "running points",
+            "meaning": "Money mule activity or transferring illicit funds",
+            "category": "laundering_service",
+            "risk_level": 5,
+            "examples": ["招跑分，高佣金"]
+        },
+        {
+            "term": "免殺",
+            "pinyin": "mian3 sha1",
+            "language": "zh-CN",
+            "literal": "avoid kill",
+            "meaning": "Malware that evades antivirus detection (FUD)",
+            "category": "malware_service",
+            "risk_level": 5,
+            "examples": ["免殺木馬定制"]
+        },
+        {
+            "term": "木馬",
+            "pinyin": "mu4 ma3",
+            "language": "zh-CN",
+            "literal": "wooden horse",
+            "meaning": "Trojan malware",
+            "category": "malware_service",
+            "risk_level": 5,
+            "examples": ["遠控木馬出售"]
+        },
+        {
+            "term": "釣魚",
+            "pinyin": "diao4 yu2",
+            "language": "zh-CN",
+            "literal": "fishing",
+            "meaning": "Phishing attack or phishing kit",
+            "category": "malware_service",
+            "risk_level": 4,
+            "examples": ["釣魚頁面制作", "銀行釣魚套裝"]
+        },
+        {
+            "term": "社工",
+            "pinyin": "she4 gong1",
+            "language": "zh-CN",
+            "literal": "social engineering",
+            "meaning": "Social engineering attack or personal information lookup",
+            "category": "stolen_data",
+            "risk_level": 4,
+            "examples": ["社工庫查詢", "專業社工服務"]
+        },
+        {
+            "term": "查檔",
+            "pinyin": "cha2 dang3",
+            "language": "zh-CN",
+            "literal": "check files",
+            "meaning": "Looking up personal records or doxing service",
+            "category": "stolen_data",
+            "risk_level": 4,
+            "examples": ["查檔服務，秒出"]
+        },
+        {
+            "term": "擼卡",
+            "pinyin": "lu1 ka3",
+            "language": "zh-CN",
+            "literal": "stroke card",
+            "meaning": "Credit card fraud or carding",
+            "category": "stolen_data",
+            "risk_level": 5,
+            "examples": ["擼卡教程出售"]
+        },
+        {
+            "term": "CVV",
+            "pinyin": null,
+            "language": "zh-CN",
+            "literal": "CVV",
+            "meaning": "Stolen credit card data with CVV code",
+            "category": "stolen_data",
+            "risk_level": 5,
+            "examples": ["高質量CVV出售", "新鮮CVV"]
+        },
+        {
+            "term": "料",
+            "pinyin": "liao4",
+            "language": "zh-CN",
+            "literal": "material",
+            "meaning": "Stolen data or credentials",
+            "category": "stolen_data",
+            "risk_level": 3,
+            "examples": ["有料出售", "新料到貨"]
+        },
+        {
+            "term": "秒到",
+            "pinyin": "miao3 dao4",
+            "language": "zh-CN",
+            "literal": "second arrive",
+            "meaning": "Instant delivery (often used for stolen data)",
+            "category": "general_underground",
+            "risk_level": 2,
+            "examples": ["付款秒到"]
+        },
+        {
+            "term": "擔保",
+            "pinyin": "dan1 bao3",
+            "language": "zh-CN",
+            "literal": "guarantee",
+            "meaning": "Escrow service in underground markets",
+            "category": "general_underground",
+            "risk_level": 2,
+            "examples": ["支持擔保交易"]
+        },
+        {
+            "term": "黑產",
+            "pinyin": "hei1 chan3",
+            "language": "zh-CN",
+            "literal": "black industry",
+            "meaning": "Cybercrime industry or underground economy",
+            "category": "general_underground",
+            "risk_level": 3,
+            "examples": ["黑產交流群"]
+        },
+        {
+            "term": "遠控",
+            "pinyin": "yuan3 kong4",
+            "language": "zh-CN",
+            "literal": "remote control",
+            "meaning": "Remote Access Trojan (RAT)",
+            "category": "malware_service",
+            "risk_level": 5,
+            "examples": ["遠控軟件出售", "安卓遠控"]
+        },
+        {
+            "term": "殼",
+            "pinyin": "ke2",
+            "language": "zh-CN",
+            "literal": "shell",
+            "meaning": "Webshell or backdoor access to a server",
+            "category": "access_broker",
+            "risk_level": 5,
+            "examples": ["大量殼出售", "gov殼"]
+        },
+        {
+            "term": "權限",
+            "pinyin": "quan2 xian4",
+            "language": "zh-CN",
+            "literal": "authority/permission",
+            "meaning": "System access or administrative privileges",
+            "category": "access_broker",
+            "risk_level": 4,
+            "examples": ["出售企業權限", "學校權限"]
+        },
+        {
+            "term": "拖庫",
+            "pinyin": "tuo1 ku4",
+            "language": "zh-CN",
+            "literal": "drag database",
+            "meaning": "Exfiltrating or dumping a database",
+            "category": "stolen_data",
+            "risk_level": 5,
+            "examples": ["專業拖庫服務"]
+        },
+        {
+            "term": "刷單",
+            "pinyin": "shua1 dan1",
+            "language": "zh-CN",
+            "literal": "brush orders",
+            "meaning": "Fake review scam or click fraud",
+            "category": "scam_indicator",
+            "risk_level": 3,
+            "examples": ["刷單兼職詐騙"]
+        },
+        {
+            "term": "殺豬盤",
+            "pinyin": "sha1 zhu1 pan2",
+            "language": "zh-CN",
+            "literal": "pig butchering plate",
+            "meaning": "Romance scam that drains victims over time",
+            "category": "scam_indicator",
+            "risk_level": 5,
+            "examples": ["殺豬盤團隊招人"]
+        },
+        {
+            "term": "水房",
+            "pinyin": "shui3 fang2",
+            "language": "zh-CN",
+            "literal": "water room",
+            "meaning": "Money laundering operation center",
+            "category": "laundering_service",
+            "risk_level": 5,
+            "examples": ["水房招人", "大額水房"]
+        }
+    ]
+}

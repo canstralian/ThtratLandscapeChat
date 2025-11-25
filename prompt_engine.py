@@ -1,6 +1,8 @@
 # prompt_engine.py
+"""Centralized prompt construction for the intelligence system."""
 
 from textwrap import dedent
+
 
 class PromptEngine:
     """
@@ -42,12 +44,13 @@ class PromptEngine:
         {self.system_context}
 
         TASK:
-        Translate this Mandarin/Cantonese text into English.  
+        Translate this Mandarin/Cantonese text into English.
         Then explain: the idioms, cultural tone, and implied intent.
 
         TEXT:
         {text}
         """)
+
 
 # Example usage:
 # engine = PromptEngine()

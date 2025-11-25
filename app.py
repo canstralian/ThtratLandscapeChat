@@ -1,10 +1,11 @@
 import gradio as gr
 import tempfile
-from datetime import datetime
+
 
 # ---------------------------------------------------------------------------
 # Backend logic per mode (stub functions to plug your real engine into)
 # ---------------------------------------------------------------------------
+
 
 def handle_threat_intel(message, files):
     out = f"[Threat Intel] Processed: {message}"
@@ -12,15 +13,18 @@ def handle_threat_intel(message, files):
         out += f" | Files: {[f.name for f in files]}"
     return out
 
+
 def handle_translation(message, files):
     out = f"[Translation] Interpreted: {message}"
     if files:
         out += " | (Files attached for context)"
     return out
 
+
 def handle_marketplace_watch(message, files):
     out = f"[Marketplace Watch] Monitoring request: {message}"
     return out
+
 
 def handle_analyst_tools(message, files):
     out = f"[Analyst Tools] Action: {message}"
@@ -37,6 +41,7 @@ MODE_ROUTER = {
 # ---------------------------------------------------------------------------
 # Core message processing
 # ---------------------------------------------------------------------------
+
 
 def process_message(message, files, history, mode):
     if not message and not files:
@@ -73,6 +78,7 @@ def download_chat(history):
         f.write(content)
 
     return tmp_file.name
+
 
 # ---------------------------------------------------------------------------
 # Mobile-first UI
