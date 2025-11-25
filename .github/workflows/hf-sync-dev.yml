@@ -1,13 +1,22 @@
-name: Sync PR to Hugging Face (dev space)
+name: Sync PR to Hugging Face Dev Space
 
 on:
   pull_request:
-    # triggers on both draft PRs and normal PRs
-    types: [opened, reopened, synchronize, ready_for_review]
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
 
 jobs:
   sync-to-hf-dev:
+    # Avoid running on forked PRs (no secrets available there)
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+
+    env:
+      # Hugging Face Space id, e.g. "S-Dreamer/ThtratLandscapeChat-dev"
+      HF_SPACE_ID: S-Dreamer/ThtratLandscapeChat-dev
 
     steps:
       - name: Checkout repository
@@ -23,25 +32,40 @@ jobs:
           python -m pip install --upgrade pip
           pip install huggingface_hub
 
-      - name: Push repo to dev Space
+      - name: Sync repository to Hugging Face dev Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_SPACE_ID: "S-Dreamer/ThtratLandscapeChat-dev"  # change if needed
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           python - << 'EOF'
           import os
-          from huggingface_hub import upload_folder
+          from huggingface_hub import upload_folder, HfApi
 
-          repo_id = os.environ["HF_SPACE_ID"]
-          token = os.environ["HF_TOKEN"]
+          hf_token = os.environ.get("HF_TOKEN")
+          space_id = os.environ["HF_SPACE_ID"]
+          pr_number = os.environ.get("GITHUB_PR_NUMBER", "unknown")
+          ref_name = os.environ.get("GITHUB_REF_NAME", "unknown")
 
-          # Upload the whole repo (except .git) to the Space
+          if not hf_token:
+            raise SystemExit("HF_TOKEN is not set. Add it as a GitHub Actions secret.")
+
+          print(f"Syncing repo to HF Space: {space_id}")
+          print(f"  PR: #{pr_number}")
+          print(f"  Branch/Ref: {ref_name}")
+
+          api = HfApi()
+          # Optional: sanity check token
+          me = api.whoami(token=hf_token)
+          print(f"Authenticated as: {me['name']}")
+
+          # Upload the entire repository folder to the Space
           upload_folder(
-              repo_id=repo_id,
+              repo_id=space_id,
               repo_type="space",
               folder_path=".",
-              token=token,
-              commit_message=f"Sync from GitHub PR {os.environ.get('GITHUB_REF', '')}"
+              token=hf_token,
+              commit_message=f"Sync from GitHub PR #{pr_number} ({ref_name})"
           )
+          print("Sync complete.")
           EOF
-
