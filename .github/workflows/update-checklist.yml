@@ -1,0 +1,38 @@
+name: Update PR Checklist
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-checklist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Run checklist updater
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/update_checklist.py
+
+      - name: Commit updated checklist
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add PR_Checklist.md
+          if ! git diff --quiet --staged; then
+            git commit -m "Auto-update PR checklist"
+            git push
+          fi
