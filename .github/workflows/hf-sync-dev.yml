@@ -1,4 +1,6 @@
 name: Sync PR to Hugging Face Dev Space
+permissions:
+  contents: read
 
 on:
   pull_request:
