@@ -1,0 +1,24 @@
+# Dependabot configuration file for automated dependency updates
+version: 2
+updates:
+  # For Python dependencies (e.g., Flask, backend libraries)
+  - package-ecosystem: "pip"
+    directory: "/" # Base directory containing `requirements.txt`
+    schedule:
+      interval: "weekly" # Update dependencies once per week
+    commit-message:
+      prefix: "[Deps]"
+      include: scope
+    open-pull-requests-limit: 5
+
+  # For JavaScript dependencies (e.g., React, frontend libraries)
+  - package-ecosystem: "npm"
+    directory: "/" # Change if `package.json` is in a sub-directory
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "[Deps]"
+      include: scope
+    open-pull-requests-limit: 5
+
+  # Optional: Add more ecosystems if needed, e.g., `docker`, `github-actions`
