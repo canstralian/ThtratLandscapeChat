@@ -1,5 +1,5 @@
 gradio==4.44.0
-pydantic==2.7.0
+pydantic==2.12.4
 python-multipart==0.0.20
 pillow==10.3.0
 pypdf==4.2.0
